@@ -1,6 +1,6 @@
 <?php
 // first of all, we need to connect to the database
-require_once('DConnect.php');
+require_once('DBonnect.php');
 
 // we need to check if the input in the form textfields are not empty
 if (isset($_POST['fname']) && isset($_POST['pass'])) {
