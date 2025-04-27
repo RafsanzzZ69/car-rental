@@ -3,9 +3,9 @@
 require_once('DConnect.php');
 
 // we need to check if the input in the form textfields are not empty
-if (isset($_POST['name']) && isset($_POST['pass'])) {
+if (isset($_POST['fname']) && isset($_POST['pass'])) {
 	// write the query to check if this username and password exists in our database
-	$u = $_POST['name'];
+	$u = $_POST['fname'];
 	$p = $_POST['pass'];
 	$sql = "SELECT * FROM user WHERE username = '$u' AND password = '$p'";
 
@@ -14,7 +14,7 @@ if (isset($_POST['name']) && isset($_POST['pass'])) {
 
 	// check if it returns an empty set
 	if (mysqli_num_rows($result) != 0) {
-		echo "LET HIM ENTER;";
+		echo "LET HIM ENTER";
 	} else {
 		echo "Username or Password is wrong";
 	}
