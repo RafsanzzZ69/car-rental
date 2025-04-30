@@ -1,26 +1,33 @@
-<?php
-$booking_id = $_GET['booking_id'] ?? '0';
-$amount = $_GET['amount'] ?? '100';
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Choose Payment Method</title>
+    <meta charset="UTF-8">
+    <title>Car Rental - Payment</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Payment for Booking #<?php echo htmlspecialchars($booking_id); ?></h2>
-    <p>Total Amount: ৳<?php echo htmlspecialchars($amount); ?></p>
+    <div class="overlay"></div>
 
-    <form action="payment_process.php" method="post">
-        <input type="hidden" name="booking_id" value="<?php echo htmlspecialchars($booking_id); ?>">
-        <input type="hidden" name="amount" value="<?php echo htmlspecialchars($amount); ?>">
+    <section id="header">
+        <div class="site-title">RENT YOUR CAR</div>
+        <div class="menu">
+            <a href="homepage.php">Home</a>
+        </div>
+    </section>
 
-        <label>Select Payment Method:</label><br>
-        <input type="radio" name="payment_method" value="online" required> Online<br>
-        <input type="radio" name="payment_method" value="offline"> Offline<br><br>
+    <section id="section1">
+        <div class="title">Choose Payment Method</div>
+        <form action="payment_process.php" class="form_design" method="post">
+            Booking ID: <input type="text" name="booking_id" required><br/>
+            Payment Type:<br/>
+            <input type="radio" name="payment_method" value="online" required> Online<br/>
+            <input type="radio" name="payment_method" value="offline" required> Offline<br/><br/>
+            <input type="submit" value="Confirm Payment">
+        </form>
+    </section>
 
-        <button type="submit">Make Payment</button>
-    </form>
+    <section id="footer">
+        <p>&copy; 2025 Car Rental Project</p>
+    </section>
 </body>
 </html>
